@@ -13,7 +13,7 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		URL url =null;
 		HttpURLConnection connection = null;
-		String urlString = "https://api.nationalize.io/?name=nathaniel";
+		String urlString = "https://api.chucknorris.io/jokes/random";
 		int response = 0;
 
 		try{
