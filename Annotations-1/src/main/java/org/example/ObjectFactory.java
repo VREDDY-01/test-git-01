@@ -10,9 +10,15 @@ public class ObjectFactory {
 		System.out.println("object created!!!!!!!!!!!");
 	}
 
-	@Bean
+	@Bean("whiteCar")
 	public Car createCar(){
 		System.out.println("creating white color car");
 		return new Car("white");
+	}
+
+	@Bean("orangeCar")
+	public Car createCar2(){
+		System.out.println("creating orange car");
+		return new Car("orange");
 	}
 }
