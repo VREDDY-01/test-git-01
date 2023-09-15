@@ -59,4 +59,20 @@ public class ProductService {
 	public Product getProductId(Integer id) {
 		return productRepo.getProductList().get(id);
 	}
+
+	public List<Product> getProductsByPrice(double lowerPrice, double higherPrice) {
+		return getAllProducts().values()
+				.stream()
+				.filter(product->product.getProductPrice() >= lowerPrice
+						&& product.getProductPrice() <= higherPrice)
+				.collect(Collectors.toList());
+	}
+
+	public List<Product> getProductsByPriceAndCategory(double lowerPrice, double higherPrice, Category category) {
+
+		return getProductsByPrice(lowerPrice,higherPrice)
+				.stream()
+				.filter(product -> product.getProductCategory().equals(category))
+				.collect(Collectors.toList());
+	}
 }
